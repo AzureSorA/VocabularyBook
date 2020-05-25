@@ -1,0 +1,15 @@
+﻿<Window x:Class="WordsSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WordsSystem"
+        mc:Ignorable="d"
+        Title="主界面" Height="350" Width="600">
+    <Grid>
+        <Button x:Name="Random" Content="随机抽查" HorizontalAlignment="Left" Margin="90,101,0,0" VerticalAlignment="Top" Height="55" Width="94" FontSize="16" Click="Random_Click"/>
+        <Button x:Name="Manage_dict" Content="管理词库" HorizontalAlignment="Left" Margin="247,101,0,0" VerticalAlignment="Top" Height="55" Width="94" FontSize="16" Click="Manage_Click"/>
+        <Button x:Name="Search" Content="搜索单词" HorizontalAlignment="Left" Margin="400,101,0,0" VerticalAlignment="Top" Height="55" Width="94" FontSize="16" Click="Search_Click"/>
+
+    </Grid>
+</Window>

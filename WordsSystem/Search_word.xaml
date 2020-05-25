@@ -1,0 +1,56 @@
+﻿<Window x:Class="WordsSystem.Search_word"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WordsSystem"
+        mc:Ignorable="d"
+        Title="单词搜索" Height="778" Width="846">
+    <Grid>
+        <DataGrid x:Name="datagrid" Margin="14,89,22,124" AutoGenerateColumns="False" RowHeaderWidth="0">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <!--<DataGridTextColumn Header="ID" Binding="{Binding ID}" FontSize="16" Width="50"/>-->
+                <DataGridTextColumn Header="原文" Binding="{Binding Original}" FontSize="16" Width="150"/>
+                <DataGridTextColumn Header="译文" Binding="{Binding Translation}" FontSize="16" Width="150"/>
+                <DataGridTextColumn Header="释义" Binding="{Binding Explanation}" FontSize="16" Width="250"/>
+                <DataGridTextColumn Header="例句" Binding="{Binding Example}" FontSize="16" Width="260"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="0" Background="Azure" Padding="10">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="原文：" VerticalAlignment="Center"/>
+                                <TextBlock FontSize="16" Text="{Binding Original}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="译文：" VerticalAlignment="Center"/>
+                                <TextBlock FontSize="16" Text="{Binding Translation}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="释义：" VerticalAlignment="Center"/>
+                                <TextBlock FontSize="16" Text="{Binding Explanation}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="例句：" VerticalAlignment="Center"/>
+                                <TextBlock FontSize="16" Text="{Binding Example}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+
+        </DataGrid>
+        <TextBox x:Name="Tsearch" Margin="79,0,423,50" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Bottom"/>
+        <Button x:Name="Bsearch_original" Content="按原文搜" Margin="502,0,228,38" FontSize="18" Height="51" VerticalAlignment="Bottom" Click="Bsearch_original_Click"/>
+        <Label x:Name="Lcurrent_dict" Content="当前词库:" HorizontalAlignment="Left" Margin="303,35,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <ComboBox x:Name="CB_current_dict" HorizontalAlignment="Left" Margin="423,35,0,0" VerticalAlignment="Top" Width="120" FontSize="16" SelectionChanged="CB_current_dict_SelectionChanged"/>
+        <Button x:Name="Bsearch_translation" Content="按译文搜" Margin="662,0,80,38" FontSize="18" Click="Bsearch_translation_Click" Height="51" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>
